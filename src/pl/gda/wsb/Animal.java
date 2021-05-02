@@ -1,6 +1,8 @@
 package pl.gda.wsb;
 
 
+import java.util.Objects;
+
 public class Animal {
 
     static boolean isAlive = true;
@@ -46,4 +48,29 @@ public class Animal {
     }
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Animal)) return false;
+        Animal animal = (Animal) o;
+        return species.equals(animal.species) &&
+                name.equals(animal.name) &&
+                getAge().equals(animal.getAge()) &&
+                getWeight().equals(animal.getWeight());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(species, name, getAge(), getWeight());
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "species='" + species + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", weight=" + weight +
+                '}';
+    }
 }

@@ -5,6 +5,7 @@ import pl.gda.wsb.Animal;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 
 
 public class Human {
@@ -43,5 +44,39 @@ public class Human {
         }
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Human)) return false;
+        Human human = (Human) o;
+        return isWorking == human.isWorking &&
+                formatter.equals(human.formatter) &&
+                date.equals(human.date) &&
+                firstName.equals(human.firstName) &&
+                lastName.equals(human.lastName) &&
+                age.equals(human.age) &&
+                getSalary().equals(human.getSalary()) &&
+                pet.equals(human.pet) &&
+                car.equals(human.car);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(formatter, date, firstName, lastName, age, isWorking, getSalary(), pet, car);
+    }
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "formatter=" + formatter +
+                ", date=" + date +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", isWorking=" + isWorking +
+                ", salary=" + salary +
+                ", pet=" + pet +
+                ", car=" + car +
+                '}';
+    }
 }

@@ -12,4 +12,13 @@ public class Phone {
         this.year = year;
         this.system = system;
     }
+
+    @Override
+    public String toString() {
+        return "Phone{" +
+                "producer='" + producer + '\'' +
+                ", year=" + year +
+                ", system='" + system + '\'' +
+                '}';
+    }
 }

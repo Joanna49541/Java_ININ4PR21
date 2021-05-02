@@ -12,4 +12,13 @@ public class Car {
         this.producer = producer;
         this.year = year;
     }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "model='" + model + '\'' +
+                ", producer=" + producer +
+                ", year=" + year +
+                '}';
+    }
 }
