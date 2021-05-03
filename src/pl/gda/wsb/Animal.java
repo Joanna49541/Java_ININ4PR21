@@ -1,6 +1,5 @@
 package pl.gda.wsb;
 
-
 import java.util.Objects;
 
 public class Animal {

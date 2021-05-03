@@ -10,16 +10,18 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello word");
 
-        Human human1 = new Human("Basia", "Król", 23,true, 3400.0, "animal1", "car1");
-        Human human2 = new Human( "Kasia", "Lew", 23, true, 4000.0,"animal2", "car2" );
-        Human human3 = new Human("Ala", "Kot",25, true, 5000.0, " ", " ");
-        Human human4 = new Human( "Ewa", "Pik", 45, true, 6000.0, "", "");
-
         Animal animal1 = new Animal("Kot","Mruczek", 3, 5.0);
         Animal animal2 = new Animal("Pies","Burek", 2, 13.0);
 
         Car car1 = new Car("Astra",Producer.VOLKSWAGEN, 1990);
         Car car2 = new Car("Megan", Producer.SKODA, 2000);
+
+
+        Human human1 = new Human("Basia", "Król", 23,true, 3400.0, animal1,car1);
+        Human human2 = new Human( "Kasia", "Lew", 23, true, 4000.0,animal2,car2);
+        Human human3 = new Human("Ala", "Kot",25, true, 5000.0,animal2, car2);
+        Human human4 = new Human( "Ewa", "Pik", 45, true, 6000.0,animal2, car2);
+
 
         System.out.println(human1);
         System.out.println("Human" + human1.firstName + " ");

@@ -1,7 +1,6 @@
 package pl.gda.wsb;
 
 import pl.gda.wsb.device.Car;
-import pl.gda.wsb.Animal;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -31,19 +30,6 @@ public class Human {
         this.car = car;
     }
 
-    public Double getSalary() {
-        System.out.println(new Date() + ": Informacja o wypłacie" + this.lastName );
-        return salary;
-    }
-
-    public void setSalary(double newSalary){
-        if (newSalary > 0){
-            System.out.println("Całkiem nieźle");
-        } else if (newSalary < 0){
-            System.out.println("Postaraj się następnym razem!");
-        }
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -63,6 +49,18 @@ public class Human {
     @Override
     public int hashCode() {
         return Objects.hash(formatter, date, firstName, lastName, age, isWorking, getSalary(), pet, car);
+    }
+    public Double getSalary() {
+        System.out.println(new Date() + ": Informacja o wypłacie" + this.lastName );
+        return salary;
+    }
+
+    public void setSalary(double newSalary){
+        if (newSalary > 0){
+            System.out.println("Całkiem nieźle");
+        } else if (newSalary < 0){
+            System.out.println("Postaraj się następnym razem!");
+        }
     }
 
     @Override
