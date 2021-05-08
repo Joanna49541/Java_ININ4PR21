@@ -13,8 +13,8 @@ public class Main {
         Animal animal1 = new Animal("Kot","Mruczek", 3, 5.0);
         Animal animal2 = new Animal("Pies","Burek", 2, 13.0);
 
-        Car car1 = new Car("Astra",Producer.VOLKSWAGEN, 1990);
-        Car car2 = new Car("Megan", Producer.SKODA, 2000);
+        Car car1 = new Car("Astra",Producer.VOLKSWAGEN, 1990, 15000.0);
+        Car car2 = new Car("Megan", Producer.SKODA, 2000, 16000.0);
 
 
         Human human1 = new Human("Basia", "Król", 23,true, 3400.0, animal1,car1);
@@ -61,11 +61,20 @@ public class Main {
         System.out.println("\n-----------------\n");
 
         human1.pet = animal1;
-        human1.car = car1;
+        human1.setCar(car1);
         System.out.println(human1.firstName + " " + human1.lastName + "ma: \npet:" + human1.pet + human1.pet.name);
-        System.out.println(human1.firstName + " " + human1.lastName + "ma: \ncar:" + human1.car.producer + human1.car.model);
+        System.out.println(human1.firstName + " " + human1.lastName + "ma: \ncar:" + human1.getCar().producer + human1.pet.name);
 
         human1.getSalary();
         human1.setSalary(22222.0);
+
+        System.out.println("\n-----------------\n");
+
+        System.out.println("Salary:" + human2.getSalary());
+        System.out.println("Car value: " + car2.getValue());
+
+        human2.setCar(car2);
+
     }
+
 }

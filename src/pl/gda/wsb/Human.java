@@ -17,7 +17,7 @@ public class Human {
     boolean isWorking;
     private Double salary;
     Animal pet;
-    Car car;
+    private Car car;
 
     public Human(String firstName, String lastName, Integer age, boolean isWorking, Double salary, Animal pet, Car car){
 
@@ -44,6 +44,19 @@ public class Human {
                 getSalary().equals(human.getSalary()) &&
                 pet.equals(human.pet) &&
                 car.equals(human.car);
+    }
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        if(this.salary  > car.getValue()) {
+            System.out.println("Super, kupiłeś auto za gotówkę " + car.toString());
+            this.car = car;
+        } else if (this.salary > 0.83*car.getValue()){
+            System.out.println("Kupiłeś auto na raty");
+        } else System.out.println("Potrzebujesz zarobić więcej");
     }
 
     @Override
